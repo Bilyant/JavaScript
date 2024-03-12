@@ -65,14 +65,15 @@ function solve() {
             newBtnDelete.classList.add('delete-btn');
             newBtnDelete.addEventListener('click', deleteSongHandler);
 
-            newDivContainer.appendChild(imgOfSong);
-            newDivContainer.appendChild(h2HeadingGenre);
-            newDivContainer.appendChild(h2HeadingName);
-            newDivContainer.appendChild(h2HeadingAuthor);
-            newDivContainer.appendChild(h3HeadingDate);
-            newDivContainer.appendChild(newBtnSave);
-            newDivContainer.appendChild(newBtnLike);
-            newDivContainer.appendChild(newBtnDelete);
+            let allCreated = [ 
+                imgOfSong, h2HeadingGenre, h2HeadingName,
+                h2HeadingAuthor, h3HeadingDate, newBtnSave,
+                newBtnLike, newBtnDelete
+            ]
+
+            allCreated.forEach(el => {
+                newDivContainer.appendChild(el);
+            })
 
             elements.hitsContainer.appendChild(newDivContainer);
 
